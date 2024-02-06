@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>hiiiiiiia</title>
+</head>
+<body>
+<main>
+    <h2>
+        <span th:text="'Hello, ' + ${message}"></span>
+    </h2>
+    <span th:text="'пользователь по умолчанию: ' + ${myUser.getLogin()}"></span>
+    <div>
+        <table>
+            <tbody>
+            <tr th:each="q: ${allq}">
+                <td th:text="авторизация" />
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <form action="#" th:action="@{/Auth}" th:object="${myUser}" method="get">
+        <label>логин</label>
+        <input type="text" th:field="*{login}" />
+        <label>пароль</label>
+        <input type="password" th:field="*{password}" />
+        <input type="submit" value="Submit" />
+    </form>
+</main>
+</body>
+</html>
